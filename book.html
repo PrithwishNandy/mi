@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Trip - Explore Historical Places in India</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #868484;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #004d40;
+            color: #706f6f;
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #7e7a7a;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #a7ffeb;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('hero-image.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 1rem;
+            text-align: center;
+            color: #696666;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .hero a {
+            background-color: #004d40;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .hero a:hover {
+            background-color: #00695c;
+        }
+
+        /* Main Content */
+        main {
+            padding: 2rem 1rem;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            margin-bottom: 1.5rem;
+            color: #004d40;
+        }
+
+        /* Form Styles */
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form textarea,
+        form select,
+        form input[type="date"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        form textarea {
+            resize: vertical;
+            grid-column: 1 / -1;
+            min-height: 100px;
+        }
+
+        form button {
+            grid-column: 1 / -1;
+            padding: 0.75rem;
+            background-color: #004d40;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #00695c;
+        }
+
+        /* Input Icons */
+        .input-group {
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 10px;
+            top: calc(50% - 0.5em);
+            color: #757575;
+        }
+
+        .input-group input,
+        .input-group select,
+        .input-group textarea {
+            padding-left: 2.5rem;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            background-color: #004d40;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #00695c;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #004d40;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #a7ffeb;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            form {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding: 4rem 1rem;
+                
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                
+                <li><a href="#book-trip">Book Trip</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Embark on a Journey Through Time</h1>
+        <p>Experience the majesty of India's most iconic historical sites. Your adventure awaits.</p>
+        <a href="#book-trip">Book Your Trip Now</a>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <section id="book-trip">
+            <h2>Book Your Trip</h2>
+            <form id="trip-form">
+                <div class="input-group">
+                    <label for="name">Name:</label>
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone Number:</label>
+                    <i class="fas fa-phone-alt"></i>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g., +1 555 1234567" required>
+                </div>
+                <div class="input-group">
+                    <label for="destination">Select Destination:</label>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <select id="destination" name="destination" required>
+                        <option value="" disabled selected>Select a destination</option>
+                        <option value="Taj Mahal, Agra">Taj Mahal, Agra</option>
+                        <option value="Qutub Minar, Delhi">Qutub Minar, Delhi</option>
+                        <option value="Jaipur City Palace, Jaipur">Jaipur City Palace, Jaipur</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="date">Preferred Date:</label>
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="input-group">
+                    <label for="message">Additional Requests:</label>
+                    <i class="fas fa-comments"></i>
+                    <textarea id="message" name="message" placeholder="Let us know if you have any special requirements..."></textarea>
+                </div>
+                <button type="submit">Book Now</button>
+            </form>
+            <a href="o.html" class="back-link">Back to Home</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Explore Historical Places in India. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://twitter.com/?&" target="_blank"><i class="fab fa-twitter-square"></i></a>
+            <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><i class="fab fa-instagram-square"></i></a>
+            <!-- Add more social icons as needed -->
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tripForm = document.querySelector("#trip-form");
+
+            tripForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert("Thank you, " + document.getElementById('name').value + "! Your trip to " + document.getElementById('destination').value + " on " + document.getElementById('date').value + " has been booked successfully!");
+                tripForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
