@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Historical Places in India</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #e0f7fa;
+            color: #333;
+            text-align: center;
+        }
+        #home,#about,#gallery,#contact{
+            background-color: rgb(167, 164, 164);
+        }
+
+        header {
+            background-color: #00796b;
+            height: fit-content;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #1d1d1d;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #079286;
+        }
+
+        main {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 80%;
+            max-width: 1000px;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+            box-shadow: 3px,400px,solid,#0f0f0f;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Overlay Styling */
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            width: 100%;
+            padding: 10px;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .overlay p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        /* Contact Form Styles */
+        .contact-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-card h2 {
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .contact-form button {
+            background-color: #00796b;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #009688;
+        }
+
+        footer {
+            background-color: #00796b;
+            height: 20px;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Explore Historical Places in India</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="book.html">book Trip</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Welcome</h2>
+            <p>Discover India's rich heritage through its historical landmarks. Each site tells a unique story of the past.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>"We are the storytellers of India's rich tapestry, unveiling the echoes of ancient empires and the whispers of timeless monuments. Our passion is to transform history into immersive journeys, igniting your curiosity and inspiring you to embark on your own adventures through the corridors of time."</p>
+        </section>
+
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <a href="https://en.wikipedia.org/wiki/Taj_Mahal" target="_blank">
+                        <img src="pic3.jpg" alt="Taj Mahal">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="https://en.wikipedia.org/wiki/Qutb_Minar" target="_blank">
+                        <img src="pic2.jpg" alt="Qutub Minar">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="https://en.wikipedia.org/wiki/City_Palace,_Jaipur" target="_blank">
+                        <img src="oi.jpg" alt="Jaipur City Palace">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="https://en.wikipedia.org/wiki/Humayun%27s_Tomb" target="_blank">
+                        <img src="yu.jpg" alt="Humayun's Tomb">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="https://en.wikipedia.org/wiki/Red_Fort" target="_blank">
+                        <img src="ol.jpg" alt="Red Fort">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="https://en.wikipedia.org/wiki/India_Gate" target="_blank">
+                        <img src="pic6.jpg" alt="India Gate">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-card">
+                <h2>Contact Us</h2>
+                <form class="contact-form" id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Explore Historical Places in India</p>
+    </footer>
+
+</body>
+</html>
